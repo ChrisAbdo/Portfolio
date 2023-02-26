@@ -395,8 +395,8 @@ export default function Hero() {
       </div>
 
       {/* Projects Section */}
-      {projects.map((project) => (
-        <div>
+      {projects.map((project, index) => (
+        <div key={index}>
           <div className="flex flex-col sm:flex-row justify-between space-x-2 mt-2">
             <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl sm:mt-0 w-full sm:w-1/4">
               <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -517,8 +517,8 @@ export default function Hero() {
                     Next.js
                   </span> */}
 
-                  {project.badges.map((badge) => (
-                    <div className="inline-flex">
+                  {project.badges.map((badge, index) => (
+                    <div key={index} className="inline-flex">
                       <motion.span
                         className="items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800"
                         whileHover={{ scale: 1.05 }}
