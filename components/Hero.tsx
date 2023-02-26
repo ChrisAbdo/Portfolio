@@ -1,27 +1,178 @@
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 const projects = [
+  {
+    name: "Soulmates",
+    description: " A Soulbound Token (SBT) issuance engine, built on FEVM.",
+    stack:
+      "Soulmates is built with Next.js, TailwindCSS, Filecoin Virtual Machine SDK, various smart contracts.",
+    badges: [
+      {
+        name: "Hackathon Grand Prize Winner",
+      },
+      {
+        name: "Next.js",
+      },
+      {
+        name: "TailwindCSS",
+      },
+      {
+        name: "Filecoin Virtual Machine SDK",
+      },
+      {
+        name: "Vercel",
+      },
+      {
+        name: "Front End Developer",
+      },
+    ],
+    link: "https://ethglobal.com/showcase/soulmates-wveqg",
+    github: "https://github.com/rohanagarwal/hack-fevm-submission",
+    carousel: [
+      {
+        image: "/soulmates.png",
+      },
+      {
+        image:
+          "https://storage.googleapis.com/ethglobal-api-production/projects%2Fwveqg%2Fimages%2FScreen%20Shot%202022-11-20%20at%2011.43.33%20AM.png",
+      },
+      {
+        image:
+          "https://storage.googleapis.com/ethglobal-api-production/projects%2Fwveqg%2Fimages%2FScreen%20Shot%202022-11-20%20at%2011.44.25%20AM.png",
+      },
+      {
+        image:
+          "https://storage.googleapis.com/ethglobal-api-production/projects%2Fwveqg%2Fimages%2FScreen%20Shot%202022-11-20%20at%2011.44.45%20AM.png",
+      },
+    ],
+  },
   {
     name: "MovieGPT",
     description: "An AI Movie Recommender",
     stack:
       "MovieGPT is built with Next.js, TailwindCSS, OpenAI API, and Vercel Edge Functions.",
-    link: "",
+    badges: [
+      {
+        name: "Next.js",
+      },
+      {
+        name: "TailwindCSS",
+      },
+      {
+        name: "OpenAI API",
+      },
+      {
+        name: "Vercel Edge Functions + Deploy",
+      },
+    ],
+    link: "https://moviegpt.vercel.app/",
+    github: "https://github.com/chrisabdo/moviegpt",
+    carousel: [
+      {
+        image:
+          "https://pbs.twimg.com/media/FjlPDiJWAAEBVK-?format=jpg&name=large",
+      },
+      {
+        image:
+          "https://pbs.twimg.com/media/FjlPDiIWYAENHT6?format=jpg&name=large",
+      },
+      {
+        image:
+          "https://pbs.twimg.com/media/FjlPDiKXEAAYnEc?format=jpg&name=large",
+      },
+      {
+        image:
+          "https://pbs.twimg.com/media/FjlPDiGXwAE5Tai?format=jpg&name=large",
+      },
+      {
+        image:
+          "https://pbs.twimg.com/media/FjZqb62XEAoVS3M?format=jpg&name=large",
+      },
+    ],
   },
   {
     name: "Etherwav",
     description: "A Community Driven Web3 Radio",
     stack:
       "Etherwav is built with Next.js, TailwindCSS, Web3, and various smart contracts.",
-    link: "",
+    badges: [
+      {
+        name: "Next.js",
+      },
+      {
+        name: "TailwindCSS",
+      },
+      {
+        name: "Ethers",
+      },
+      {
+        name: "ThirdWeb",
+      },
+      {
+        name: "RadixUI / @shadcn",
+      },
+      {
+        name: "Vercel",
+      },
+    ],
+    link: "https://etherwav-1.vercel.app/",
+    github: "https://github.com/chrisabdo/etherwav-radix-v2",
+    carousel: [
+      {
+        image: "/etherwav.jpeg",
+      },
+      {
+        image: "/etherwav2.jpeg",
+      },
+      {
+        image: "/etherwav3.jpeg",
+      },
+    ],
   },
+
   {
-    name: "Soulmates",
-    description: " A Soulbound Token (SBT) issuance engine, built on FEVM.",
+    name: "DeStemr",
+    description: "A Decentralized music NFT marketplace for stems",
     stack:
-      "Soulmates is built with Next.js, TailwindCSS, Filecoin Virtual Machine SDK, various smart contracts.",
-    link: "",
+      "DeStemr is built with Next.js, TailwindCSS, Web3, and various smart contracts.",
+    badges: [
+      {
+        name: "Next.js",
+      },
+      {
+        name: "TailwindCSS",
+      },
+      {
+        name: "Ethers",
+      },
+      {
+        name: "Vercel",
+      },
+      {
+        name: "Truffle",
+      },
+      {
+        name: "Solidity",
+      },
+    ],
+    link: "https://ethglobal.com/showcase/destemr-y5mw7",
+    github: "https://github.com/ChrisAbdo/ETH-SF-DeStemr",
+    carousel: [
+      {
+        image:
+          "https://storage.googleapis.com/ethglobal-api-production/projects%2Fy5mw7%2Fimages%2Fimage_2022-11-05_233311822.png",
+      },
+      {
+        image:
+          "https://storage.googleapis.com/ethglobal-api-production/projects%2Fy5mw7%2Fimages%2Fimage_2022-11-05_233326750.png",
+      },
+      {
+        image:
+          "https://storage.googleapis.com/ethglobal-api-production/projects%2Fy5mw7%2Fimages%2Fimage_2022-11-05_233340316.png",
+      },
+    ],
   },
 ];
 
@@ -224,7 +375,10 @@ export default function Hero() {
       </div>
 
       {/* Projects Selection Section */}
-      <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl mt-2">
+      <div
+        id="#projects"
+        className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl mt-2"
+      >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <p className="text-base font-semibold leading-7 text-[#999]">
@@ -240,505 +394,165 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* MovieGPT Section */}
-      <div className="flex flex-col sm:flex-row justify-between space-x-2 mt-2">
-        <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl sm:mt-0 w-full sm:w-1/4">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-2xl font-bold tracking-tight text-white sm:text-4xl">
-                {projects[0].name}
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl sm:mt-0 w-full sm:w-1/2 mt-2">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-2xl font-bold tracking-tight text-white sm:text-4xl">
-                {projects[0].description}
-              </h2>
-              <p className="mt-3 text-lg text-gray-300">{projects[0].stack}</p>
-
-              <div className="flex justify-between">
-                <div className="mt-7 space-x-2">
-                  <a
-                    href="#_"
-                    className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-white transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-[#333] group"
-                  >
-                    <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#555] group-hover:h-full"></span>
-                    <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-                      <svg
-                        className="w-5 h-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
-                      <svg
-                        className="w-5 h-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
-                      Launch App
-                    </span>
-                  </a>
-
-                  <a
-                    href="#_"
-                    className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-white transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-[#333] group"
-                  >
-                    <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#555] group-hover:h-full"></span>
-                    <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                      </svg>
-                    </span>
-                    <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                      </svg>
-                    </span>
-                    <span className="flex relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
-                      GitHub Repo
-                    </span>
-                  </a>
+      {/* Projects Section */}
+      {projects.map((project) => (
+        <div>
+          <div className="flex flex-col sm:flex-row justify-between space-x-2 mt-2">
+            <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl sm:mt-0 w-full sm:w-1/4">
+              <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="mx-auto max-w-2xl lg:mx-0">
+                  <h2 className="text-2xl font-bold tracking-tight text-white sm:text-4xl">
+                    {project.name}
+                  </h2>
                 </div>
-                <div></div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl mt-2 sm:mt-0 w-full sm:w-1/4">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl">
-              <span className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
-                Next.js
-              </span>
-              &nbsp;
-              <span className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
-                TailwindCSS
-              </span>
-              &nbsp;
-              <span className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
-                Vercel
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+            <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl sm:mt-0 w-full sm:w-1/2 mt-2">
+              <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="mx-auto max-w-2xl lg:mx-0">
+                  <h2 className="text-2xl font-bold tracking-tight text-white sm:text-4xl">
+                    {project.description}
+                  </h2>
+                  <p className="mt-3 text-lg text-gray-300">{project.stack}</p>
 
-      {/* MovieGPT Image Carousel */}
-      <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl mt-2">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="scrollbar-hide mt-14 flex w-full snap-x snap-mandatory scroll-px-10 gap-10 overflow-x-scroll scroll-smooth px-10">
-            <div className="md:2/3 relative aspect-[2/3] w-[90%] shrink-0 snap-start snap-always rounded-xl bg-orange-100 sm:w-[44%] md:w-[30%]">
-              <img
-                src="https://pbs.twimg.com/media/FjlPDiJWAAEBVK-?format=jpg&name=large"
-                alt="image"
-                className="h-full w-full rounded-xl object-cover"
-              />
-            </div>
-
-            <div className="md:2/3 relative aspect-[2/3] w-[90%] shrink-0 snap-start snap-always rounded-xl bg-orange-100 sm:w-[44%] md:w-[30%]">
-              <img
-                src="https://pbs.twimg.com/media/FjlPDiIWYAENHT6?format=jpg&name=large"
-                className="h-full w-full rounded-xl object-cover"
-              />
-            </div>
-
-            <div className="md:2/3 relative aspect-[2/3] w-[90%] shrink-0 snap-start snap-always rounded-xl bg-blue-100 sm:w-[44%] md:w-[30%]">
-              <img
-                src="https://pbs.twimg.com/media/FjlPDiKXEAAYnEc?format=jpg&name=large"
-                className="h-full w-full rounded-xl object-cover"
-              />
-            </div>
-
-            <div className="md:2/3 relative aspect-[2/3] w-[90%] shrink-0 snap-start snap-always rounded-xl bg-green-100 sm:w-[44%] md:w-[30%]">
-              <img
-                src="https://pbs.twimg.com/media/FjlPDiGXwAE5Tai?format=jpg&name=large"
-                className="h-full w-full rounded-xl object-cover"
-              />
-            </div>
-
-            <div className="md:2/3 relative aspect-[2/3] w-[90%] shrink-0 snap-start snap-always rounded-xl bg-rose-100 sm:w-[44%] md:w-[30%]">
-              <div className="absolute bottom-0 z-10 w-full rounded-xl bg-gradient-to-t from-black px-5 py-3">
-                <h2 className="mt-4 text-xl font-bold text-white">
-                  Times Square
-                </h2>
-                <p className="text-sm text-white/50">Singapore</p>
-              </div>
-              <img
-                src="https://pbs.twimg.com/media/FjZqb62XEAoVS3M?format=jpg&name=large"
-                className="h-full w-full rounded-xl object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Etherwav */}
-      <div className="flex flex-col sm:flex-row justify-between space-x-2 mt-2">
-        <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl sm:mt-0 w-full sm:w-1/4">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-2xl font-bold tracking-tight text-white sm:text-4xl">
-                {projects[1].name}
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl sm:mt-0 w-full sm:w-1/2 mt-2">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-2xl font-bold tracking-tight text-white sm:text-4xl">
-                {projects[1].description}
-              </h2>
-              <p className="mt-3 text-lg text-gray-300">{projects[1].stack}</p>
-
-              <div className="flex justify-between">
-                <div className="mt-7 space-x-2">
-                  <a
-                    href="#_"
-                    className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-white transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-[#333] group"
-                  >
-                    <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#555] group-hover:h-full"></span>
-                    <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-                      <svg
-                        className="w-5 h-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
+                  <div className="flex justify-between">
+                    <div className="mt-7 space-x-2">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-white transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-[#333] group"
                       >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
-                      <svg
-                        className="w-5 h-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
+                        <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#555] group-hover:h-full"></span>
+                        <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
+                          <svg
+                            className="w-5 h-5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
+                            ></path>
+                          </svg>
+                        </span>
+                        <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
+                          <svg
+                            className="w-5 h-5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
+                            ></path>
+                          </svg>
+                        </span>
+                        <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
+                          Launch App
+                        </span>
+                      </a>
+
+                      <a
+                        href={project.github}
+                        rel="noreferrer"
+                        target="_blank"
+                        className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-white transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-[#333] group"
                       >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
-                      Launch App
-                    </span>
-                  </a>
-                  <a
-                    href="#_"
-                    className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-white transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-[#333] group"
-                  >
-                    <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#555] group-hover:h-full"></span>
-                    <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                      </svg>
-                    </span>
-                    <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                      </svg>
-                    </span>
-                    <span className="flex relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
-                      GitHub Repo
-                    </span>
-                  </a>
+                        <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#555] group-hover:h-full"></span>
+                        <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                          </svg>
+                        </span>
+                        <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                          </svg>
+                        </span>
+                        <span className="flex relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
+                          GitHub Repo
+                        </span>
+                      </a>
+                    </div>
+                    <div></div>
+                  </div>
                 </div>
-                <div></div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl mt-2 sm:mt-0 w-full sm:w-1/4">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl">
-              <span className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
-                Next.js
-              </span>
-              &nbsp;
-              <span className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
-                TailwindCSS
-              </span>
-              &nbsp;
-              <span className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
-                Solidity
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+            <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl mt-2 sm:mt-0 w-full sm:w-1/4">
+              <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="mx-auto max-w-2xl">
+                  {/* <span className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
+                    Next.js
+                  </span> */}
 
-      {/* Etherwav Image Carousel */}
-      <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl mt-2">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="scrollbar-hide mt-14 flex w-full snap-x snap-mandatory scroll-px-10 gap-10 overflow-x-scroll scroll-smooth px-10">
-            <div className="md:2/3 relative aspect-[2/3] w-[90%] shrink-0 snap-start snap-always rounded-xl bg-orange-100 sm:w-[44%] md:w-[30%]">
-              <img
-                src="/etherwav.jpeg"
-                alt="image"
-                className="h-full w-full rounded-xl object-cover"
-              />
-            </div>
-
-            <div className="md:2/3 relative aspect-[2/3] w-[90%] shrink-0 snap-start snap-always rounded-xl bg-orange-100 sm:w-[44%] md:w-[30%]">
-              <img
-                src="/etherwav2.jpeg"
-                className="h-full w-full rounded-xl object-cover"
-              />
-            </div>
-
-            <div className="md:2/3 relative aspect-[2/3] w-[90%] shrink-0 snap-start snap-always rounded-xl bg-blue-100 sm:w-[44%] md:w-[30%]">
-              <img
-                src="/etherwav3.jpeg"
-                className="h-full w-full rounded-xl object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Soulmates */}
-      <div className="flex flex-col sm:flex-row justify-between space-x-2 mt-2">
-        <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl sm:mt-0 w-full sm:w-1/4">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-2xl font-bold tracking-tight text-white sm:text-4xl">
-                {projects[2].name}
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl sm:mt-0 w-full sm:w-1/2 mt-2">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-2xl font-bold tracking-tight text-white sm:text-4xl">
-                {projects[2].description}
-              </h2>
-              <p className="mt-3 text-lg text-gray-300">{projects[2].stack}</p>
-
-              <div className="flex justify-between">
-                <div className="mt-7 space-x-2">
-                  <a
-                    href="#_"
-                    className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-white transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-[#333] group"
-                  >
-                    <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#555] group-hover:h-full"></span>
-                    <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-                      <svg
-                        className="w-5 h-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
+                  {project.badges.map((badge) => (
+                    <div className="inline-flex">
+                      <motion.span
+                        className="items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.9 }}
                       >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
-                      <svg
-                        className="w-5 h-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
-                      Launch App
-                    </span>
-                  </a>
-                  <a
-                    href="#_"
-                    className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-white transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-[#333] group"
-                  >
-                    <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#555] group-hover:h-full"></span>
-                    <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                      </svg>
-                    </span>
-                    <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                      </svg>
-                    </span>
-                    <span className="flex relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
-                      GitHub Repo
-                    </span>
-                  </a>
+                        {badge.name}
+                      </motion.span>
+                      &nbsp;
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl mt-2 sm:mt-0 w-full sm:w-1/4">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl">
-              <span className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
-                Next.js
-              </span>
-              &nbsp;
-              <span className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
-                TailwindCSS
-              </span>
-              &nbsp;
-              <span className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
-                Solidity
-              </span>
+          <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl mt-2">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <div className="scrollbar-hide mt-14 flex w-full snap-x snap-mandatory scroll-px-10 gap-10 overflow-x-scroll scroll-smooth px-10">
+                {project.carousel.map((image, index) => (
+                  <div
+                    key={index}
+                    className="md:2/3 relative aspect-[2/3] w-[90%] shrink-0 snap-start snap-always rounded-xl bg-orange-100 sm:w-[44%] md:w-[30%]"
+                  >
+                    <img
+                      src={image.image}
+                      alt="image"
+                      className="h-full w-full rounded-xl object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Soulmates Image Carousel */}
-      <div className="bg-[#111] bg-opacity-80 backdrop-blur-xl py-6 sm:py-12 rounded-3xl mt-2">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="scrollbar-hide mt-14 flex w-full snap-x snap-mandatory scroll-px-10 gap-10 overflow-x-scroll scroll-smooth px-10">
-            <div className="md:2/3 relative aspect-[2/3] w-[90%] shrink-0 snap-start snap-always rounded-xl bg-orange-100 sm:w-[44%] md:w-[30%]">
-              <Image
-                src="/soulmates.png"
-                alt="image"
-                className="h-full w-full rounded-xl object-cover"
-                width={500}
-                height={500}
-              />
-            </div>
-
-            <div className="md:2/3 relative aspect-[2/3] w-[90%] shrink-0 snap-start snap-always rounded-xl bg-orange-100 sm:w-[44%] md:w-[30%]">
-              <img
-                src="https://storage.googleapis.com/ethglobal-api-production/projects%2Fwveqg%2Fimages%2FScreen%20Shot%202022-11-20%20at%2011.43.33%20AM.png"
-                className="h-full w-full rounded-xl object-cover"
-              />
-            </div>
-
-            <div className="md:2/3 relative aspect-[2/3] w-[90%] shrink-0 snap-start snap-always rounded-xl bg-blue-100 sm:w-[44%] md:w-[30%]">
-              <img
-                src="https://storage.googleapis.com/ethglobal-api-production/projects%2Fwveqg%2Fimages%2FScreen%20Shot%202022-11-20%20at%2011.44.25%20AM.png"
-                className="h-full w-full rounded-xl object-cover"
-              />
-            </div>
-
-            <div className="md:2/3 relative aspect-[2/3] w-[90%] shrink-0 snap-start snap-always rounded-xl bg-blue-100 sm:w-[44%] md:w-[30%]">
-              <img
-                src="https://storage.googleapis.com/ethglobal-api-production/projects%2Fwveqg%2Fimages%2FScreen%20Shot%202022-11-20%20at%2011.44.45%20AM.png"
-                className="h-full w-full rounded-xl object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }

@@ -1,15 +1,15 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import GithubSVG from "@/public/github.svg";
 
 export default function NavLinks() {
   let [hoveredIndex, setHoveredIndex] = useState(null);
 
   return [
-    ["Gallery", "/gallery"],
-    ["Upload", "/upload"],
-    ["Pricing", "#pricing"],
-    ["FAQs", "#faqs"],
+    ["Twitter", "https://twitter.com/abdo_eth"],
+    ["GitHub", "https://www.github.com/chrisabdo"],
+    ["LinkedIn", "https://www.linkedin.com/in/christopher-abdo"],
   ].map(([label, href], index) => (
     <Link
       key={label}
