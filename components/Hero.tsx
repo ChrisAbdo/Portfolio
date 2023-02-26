@@ -227,7 +227,7 @@ export default function Hero() {
               Project Selection
             </h2>
             <p className="mt-3 text-lg text-gray-300">
-              Here are some of my favorite projects I've worked on.
+              Here are some of my favorite projects I&apos;ve worked on.
             </p>
           </div>
         </div>
