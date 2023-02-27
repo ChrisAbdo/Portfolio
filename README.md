@@ -1,4 +1,4 @@
-# A beautifully crafted portfoio built with Next.js, TailwindCSS, and Framer Motion
+# A beautifully crafted portfolio built with Next.js, TailwindCSS, and Framer Motion
 
 [Live Demo](https://chris-abdo.vercel.app).
 
@@ -10,3 +10,7 @@ To get a version running locally simply follow these steps
 2. Change into the correct directory
 3. `yarn` or `npm i` to install dependencies
 4. `yarn dev` to start the server at localhost:3000
+
+
+Thanks to maciej, original idea
+https://www.maciej.co/
